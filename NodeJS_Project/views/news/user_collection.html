@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>用户中心</title>
+	<link rel="stylesheet" type="text/css" href="/news/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/news/css/jquery.pagination.css">
+    <link rel="stylesheet" type="text/css" href="/news/css/main.css">
+    <script type="text/javascript" src="/news/js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="/news/js/jquery.pagination.min.js"></script>
+</head>
+<body class="inframe_body">
+    <div class="my_collect">
+        <h3>我的收藏</h3>
+        <ul class="article_list">
+            {{each collectionNewsList}}
+                <li><a href="#">{{$value.title}}</a><span>{{$value.create_time | dateFormat}}</span></li>
+            {{/each}}
+        </ul>
+        <div id="pagination" class="page"></div>
+        <script>
+            $(function() {
+                $("#pagination").pagination({
+                    currentPage: Number({{ currentPage }}),
+                    totalPage: Number({{ totalPage }}),
+                    callback: function(current) { // current 代表当前的页码 即第几页
+                        // alert('ok!'); // 换页的时候执行这里的代码
+
+                        location.href = "http://localhost:9000/user/collections?p="+current
+                    }
+                });
+            });
+        </script>
+
+    </div>
+</body>
+</html>

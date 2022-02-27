@@ -1,0 +1,21 @@
+{
+  "name": "NodeJS_Project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "art-template": "^4.13.2",
+    "cookie-parser": "^1.4.6",
+    "cookie-session": "^2.0.0",
+    "express": "^4.17.2",
+    "express-art-template": "^1.0.1",
+    "js-base64": "^3.7.2",
+    "jsonwebtoken": "^8.5.1",
+    "md5": "^2.3.0",
+    "moment": "^2.29.1",
+    "multer": "^1.4.4",
+    "mysql": "^2.18.1",
+    "qiniu": "^7.4.0",
+    "svg-captcha": "^1.4.0"
+  }
+}
